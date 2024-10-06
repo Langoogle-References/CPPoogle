@@ -33,7 +33,7 @@ watch(current_page_name, (new_page_name) => {
 			<li><RouterLink to="/">{{site_name}}</RouterLink></li>
 			<li><a :href="site_github.url" target="_blank">GitHub</a></li>
 			<li><a :href="site_github.url + '/issues'" target="_blank">Issues</a></li>
-			<li><a :href="'https://github.com/' + site_github.author">{{site_github.author}}</a></li>
+			<li><a :href="'https://github.com/' + site_github.author" target="_blank">{{site_github.author}}</a></li>
 			<li><RouterLink to="/about">About</RouterLink></li>
 			<li><SearchBar /></li>
 		</ul>
