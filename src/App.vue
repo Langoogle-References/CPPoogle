@@ -45,9 +45,9 @@ watch(current_page_name, (new_page_name) => {
 
 	<footer>
 		<p>
-			Made by <b>{{site_main_project}}</b> | <a :href="site_github.url" target="_blank">{{site_github.full_name}}</a> | &copy; 2024-present<br>
+			Made by <b>{{site_main_project}}</b> | <a :href="site_github.url" target="_blank">{{site_github.full_name}}</a> | &copy; 2024-present | Inspired by <a href="https://hoogle.haskell.org/" target="_blank">Hoogle</a><br>
 			Powered by <a href="https://vuejs.org/" target="_blank">Vue.JS</a>, <a href="https://router.vuejs.org/" target="_blank">VueRouter</a> and {{site_name}}-Search-engine.<br>
-			{{site_name}}-Search-engine data based on <a href="https://cppreference.com/" target="_blank">C++ Reference</a> and <a href="https://cplusplus.com/reference" target="_blank">cplusplus.com Reference</a>.
+			{{site_name}}-Search-engine data based on <a href="https://cppreference.com/" target="_blank">C++ Reference</a> and <a href="https://cplusplus.com/reference/" target="_blank">cplusplus.com Reference</a>.
 		</p>
 	</footer>
 </template>
