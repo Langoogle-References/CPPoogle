@@ -57,21 +57,27 @@ header > ul > li {
 	justify-content: center;
 	align-items: center;
 	color: #f3f3f3;
+	text-align: center;
 }
 
 header > ul > li a {
 	color: #f3f3f3;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 main {
 	flex-grow: 1;
 	padding-bottom: 0.25em;
 	border-bottom: 1px solid #cdcdcd;
+	width: 70%;
 }
 
 footer {
 	padding-top: 0.75em;
+}
+
+section:not(:first-child) {
+	margin-top: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -100,4 +106,12 @@ button {
 	padding: 0.5rem 1rem;
 	border-radius: 0.25rem;
 	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
