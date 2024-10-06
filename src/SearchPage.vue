@@ -1,18 +1,24 @@
 <script setup>
 
-import { computed, onMounted } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+const route = useRoute()
+
 const query = computed(() => {
-    return useRoute().query.q
+    return route ? route.query.q : ''
 })
 
-onMounted(() => {
-    document.title = `"${query.value}" - ` + document.title
+const title = document.title
+
+document.title = `"${query.value}" - ${title}`
+
+watch(query, (newQuery) => {
+    document.title = `"${newQuery}" - ${title}`
 })
 
 </script>
 
 <template>
-    
+    {{query}}
 </template>
