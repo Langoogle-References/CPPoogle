@@ -68,11 +68,11 @@ header > ul > li a {
 main {
 	flex-grow: 1;
 	padding-bottom: 0.25em;
-	border-bottom: 1px solid #cdcdcd;
 	width: 70%;
 }
 
 footer {
+	border-top: 1px solid #cdcdcd;
 	padding-top: 0.75em;
 }
 
