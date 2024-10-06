@@ -1,12 +1,14 @@
 <script setup>
 
-import { ref } from 'vue'
+import { ref, useTemplateRef } from 'vue'
 
 const query = ref("")
+const button = useTemplateRef('button')
+const props = defineProps(['placeholder'])
 
 const submit = (e) => {
 	if (e.key == "Enter") {
-		document.querySelector('.button').click()
+		button.value.click()
 		e.target.blur()
 	}
 }
@@ -14,8 +16,8 @@ const submit = (e) => {
 </script>
 
 <template>
-	<input type="text" placeholder="Search..." v-model="query" @keydown="submit">
-	<RouterLink class="button" :to="'/search?q=' + encodeURIComponent(query)">Search</RouterLink>
+	<input type="text" :placeholder="props.placeholder ?? 'Search...'" v-model="query" @keydown="submit">
+	<RouterLink ref="button" class="button" :to="'/search?q=' + encodeURIComponent(query)">Search</RouterLink>
 </template>
 
 <style scoped>
@@ -49,6 +51,11 @@ input::placeholder {
 	border-radius: 0 999px 999px 0; /* 999px -> force to 50% of the height */
 	padding-right: 1em;
 	border-left: none;
+	text-decoration: none;
+}
+
+.slot {
+	display: none;
 }
 
 </style>
