@@ -40,12 +40,12 @@ watch(current_page_name, (new_page_name) => {
 	</header>
 
 	<main>
-		<RouterView class="router-view" />
+		<RouterView />
 	</main>
 
 	<footer>
 		<p>
-			Made by <b>{{site_main_project}}</b> | <a href="{{site_github.url}}">{{site_github.full_name}}</a> | &copy; 2024-present<br>
+			Made by <b>{{site_main_project}}</b> | <a :href="site_github.url">{{site_github.full_name}}</a> | &copy; 2024-present<br>
 			Powered by <a href="https://vuejs.org/">Vue.JS</a>, <a href="https://router.vuejs.org/">VueRouter</a> and {{site_name}}-Search-engine.<br>
 			{{site_name}}-Search-engine data based on <a href="https://cppreference.com/">C++ Reference</a> and <a href="https://cplusplus.com/reference">cplusplus.com Reference</a>.
 		</p>
