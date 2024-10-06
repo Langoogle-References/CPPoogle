@@ -8,7 +8,7 @@ const props = defineProps(['placeholder'])
 const router = useRouter()
 
 const submit = (e) => {
-	if (e.key == "Enter") {
+	if ((e.type == "click" || e.key == "Enter") && query.value.trim() != '') {
 		router.push({ path: '/search', query: { q: query.value } })
 		e.target.blur()
 	}
@@ -18,7 +18,7 @@ const submit = (e) => {
 
 <template>
 	<input type="text" :placeholder="props.placeholder ?? 'Search...'" v-model="query" @keydown="submit">
-	<RouterLink class="button" :to="'/search?q=' + encodeURIComponent(query)">Search</RouterLink>
+	<span class="button" @click="submit">Search</span>
 </template>
 
 <style scoped>
@@ -53,10 +53,7 @@ input::placeholder {
 	padding-right: 1em;
 	border-left: none;
 	text-decoration: none;
-}
-
-.slot {
-	display: none;
+	cursor: pointer;
 }
 
 </style>
