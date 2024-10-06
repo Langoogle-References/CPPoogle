@@ -1,14 +1,15 @@
 <script setup>
 
-import { ref, useTemplateRef } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 const query = ref("")
-const button = useTemplateRef('button')
 const props = defineProps(['placeholder'])
+const router = useRouter()
 
 const submit = (e) => {
 	if (e.key == "Enter") {
-		button.value.click()
+		router.push({ path: '/search', query: { q: query.value } })
 		e.target.blur()
 	}
 }
@@ -17,7 +18,7 @@ const submit = (e) => {
 
 <template>
 	<input type="text" :placeholder="props.placeholder ?? 'Search...'" v-model="query" @keydown="submit">
-	<RouterLink ref="button" class="button" :to="'/search?q=' + encodeURIComponent(query)">Search</RouterLink>
+	<RouterLink class="button" :to="'/search?q=' + encodeURIComponent(query)">Search</RouterLink>
 </template>
 
 <style scoped>
